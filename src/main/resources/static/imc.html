@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+<div class="bg-white p-8 rounded shadow-md w-96">
+    <h2 class="text-2xl font-bold mb-4">Calculadora IMC</h2>
+    <form>
+        <div class="mb-4">
+            <label for="peso" class="block text-gray-700">Peso (Quilos):</label>
+            <input type="text" id="peso" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+        </div>
+        <div class="mb-4">
+            <label for="altura" class="block text-gray-700">Altura (Em centímetros):</label>
+            <input type="text" id="altura" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+        </div>
+        <button type="button" onclick="calcularIMC()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Calcular IMC</button>
+    </form>
+    <p id="resultado" class="mt-4"></p>
+</div>
+
+<script>
+    function calcularIMC() {
+        const peso = document.getElementById("peso").value;
+        const altura = document.getElementById("altura").value;
+        fetch(`/imc?peso=${peso}&altura=${altura}`)
+            .then(response => response.text())
+            .then(data => document.getElementById("resultado").innerText = `IMC: ${data}`);
+    }
+</script>
+</body>
+
+</html>
