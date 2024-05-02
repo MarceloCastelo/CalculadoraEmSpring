@@ -6,16 +6,6 @@ Este é um projeto Java Spring Boot simples que demonstra como criar um aplicati
 
 Certifique-se de ter o Java e o Maven instalados na sua máquina.
 
-1. Clone o repositório:
-
-
-git clone https://github.com/seu_usuario/seu_projeto.git
-Navegue até o diretório do projeto:
-cd seu_projeto
-Execute o projeto usando o Maven:
-mvn spring-boot:run
-O aplicativo estará disponível em http://localhost:8080.
-
 Estrutura do Projeto
 O projeto possui a seguinte estrutura de diretórios:
 
